@@ -17,28 +17,22 @@
 
   <body <?php body_class(); ?>>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="header">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <div class="col-lg-8">
+            <a class="" href="<?php bloginfo('url'); ?>">
+              <img class="header-logo" src="<?php bloginfo('template_directory');?>/images/logo-header.png" alt="<?php bloginfo('name'); ?>" />
+              <p class="header-title"><?php bloginfo('name'); ?></p>
+              <p class="header-tagline"><?php bloginfo('description'); ?></p>
+            </a>
+          </div>
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidemenu">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
-        </div>
 
-        <div id="navbar" class="navbar-collapse collapse">
-          <?php
-            $args = array(
-              'menu'        =>  'header-menu',
-              'menu_class'  =>  'nav navbar-nav',
-              'container'   =>  'false'
-            );
-            wp_nav_menu($args);
-          ?>
-
-        </div><!--/.navbar-collapse -->
       </div>
-    </nav>
+
+    </div>

@@ -1,37 +1,46 @@
 <?php get_header(); ?>
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
+
+  <div class="container">
+    <div class="row">
+
+      <?php get_sidebar(); ?>
+
+      <div class="col-sm-9 posts">
 
         <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-          <?php the_content(); ?>
+          <article class="post">
+            <p class="date"><?php echo the_time('l, F jS, Y'); ?></p>
+            <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+            <p class="description">
+              in <?php the_category(', '); ?>.
+              <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
+            </p>
 
-        <?php endwhile; endif; ?>
+            <!-- <?php the_excerpt(); ?> -->
+            <?php the_content(); ?>
+
+            <hr/>
+          </article>
+
+          <!-- <?php the_content(); ?> -->
+
+        <?php endwhile; else: ?>
+
+          <article>
+            <h2>Oh no!</h2>
+          </article>
+
+          <p>No content is appearing for this page!</p>
+
+        <?php endif; ?>
 
       </div>
+
+
+
     </div>
 
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
 
-          <?php if(dynamic_sidebar('front-left')); ?>
-
-        </div>
-        <div class="col-md-4">
-
-          <?php if(dynamic_sidebar('front-center')); ?>
-
-       </div>
-        <div class="col-md-4">
-
-          <?php if(dynamic_sidebar('front-right')); ?>
-
-        </div>
-      </div>
-
-      <hr>
-
+    </div> <!-- /container -->
     <?php get_footer(); ?>

@@ -8,67 +8,252 @@ License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700,300);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900,400italic);
+
 body {
   padding-top: 50px;
   padding-bottom: 20px;
+  font-family: 'Roboto', Arial, serif;
+  color: #000;
+}
+
+a {
+  color: #999;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #555;
 }
 
 .admin-bar .navbar-fixed-top {
 	margin-top: 30px;
 }
 
-@media (min-width:768px) {
-	.sub-menu {
-		display: none;
-		position: absolute;
-		background: #222;
-		padding: 10px 15px;
-		width: 200px;
-	}
 
-	li:hover .sub-menu {
-		display: block;
-	}
+/*  header  */
+.header {
 
 }
 
-.sub-menu li {
-	margin-bottom: 10px;
-	list-style: none;
+.header-logo {
+  margin: -50px -0 0 -15px;
 }
 
-.sub-menu li:last-child {
-	margin-bottom: 0;
+.header-title {
+  font-family: 'Montserrat', Arial, serif;
+  font-weight: 900;
+  color: #000;
+  margin: -135px 0 145px 90px;
+  font-size: 600%;
 }
 
-.sub-menu a  {
-	color: #999;
-	text-decoration: none;
+.header-tagline {
+  margin: -175px 0 135px 96px;
+  font-family: 'Montserrat', Arial, serif;
+  font-weight: 300;
+  color: #bbb;
+  font-size: 200%;
 }
 
-.sub-menu a:hover  {
-	color: #fff;
+/*  content */
+.posts {
+  margin: -100px 0 0 0;
 }
 
-.current-menu-item > a, .current-menu-parent > a {
-	background: #000;
-}
-.current-menu-parent li a {
-	background: inherit;
-}
-.current-menu-parent .current-menu-item a {
-	color: #fff;
-	font-weight: bold;
-}
+.post > .title {color: #000; font-size: 200%;}
+.post > .title > a {color: #000; font-weight: 700;}
+.post > .title > a:hover {color: #555;}
+.post > .date {color: #bbb; margin: 0 0 -5px 0; font-size: 110%;}
+.post > .description {color: #555; margin: -15px 0 15px 0;}
+.post > .description > a {color: #bbb;}
+.post > .description > a:hover {color: #777;}
 
 .sidebar {
-  margin-top: 40px;
+  font-family: 'Montserrat', Arial, serif;
 }
 
-.widget {
-  margin: 10px 0 30px;
+.widget h3{
+  font-size: 170%;
+  font-weight: 700;
 }
 
-article.post {
-  margin: 20px 0 40px;
+.navbar-toggle {
+  top: 0;
+  right: 0;
+  background-color: #000;
+  position: absolute;
+}
+
+/*  footer  */
+.footer {
+  margin: 60px 0 0 0;
+  color: #ccc;
+  font-weight: 100;
+  font-size: 80%;
+}
+
+.footer-collapse {
+  color: #ccc;
+  font-weight: 100;
+  font-size: 80%;
+}
+
+
+/* side-menu widgets */
+.search-form {
+  margin: -95px 0 0 0;
+  padding: 0 0 15px 0;
+}
+
+.search-submit {
+  border-color: #222;
+  background-color: #222;
+  background-image: none;
+  filter: none;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  border: 1px solid #666666;
+  padding: 8px 12px 5px 12px;
+}
+
+.search-field {
+  font-weight: 100;
+  padding: 3px 0 3px 5px;
+}
+
+input[type=lookup] {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-appearance: textfield;
+}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="lookup"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+  outline: 0 none;
+}
+
+
+/* Reaponsiv */
+@media(max-width:767px){}
+
+@media(min-width:768px){}
+
+@media(min-width:992px){
+  .search-field {
+    width: 130px;
+  }
+}
+
+@media(min-width:1200px){
+  .search-field {
+    width: 145px;
+  }
+}
+
+ol, ul {
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-left: -20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bootstrap Off Canvas */
+
+/*
+ * Style tweaks
+ * --------------------------------------------------
+ */
+html,
+body {
+  overflow-x: hidden; /* Prevent scroll on narrow devices */
+}
+body {
+  padding-top: 70px;
+}
+footer {
+  padding: 30px 0;
+}
+
+/*
+ * Off Canvas
+ * --------------------------------------------------
+ */
+@media screen and (max-width: 767px) {
+  .row-offcanvas {
+    position: relative;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+  }
+
+  .row-offcanvas-right {
+    right: 0;
+  }
+
+  .row-offcanvas-left {
+    left: 0;
+  }
+
+  .row-offcanvas-right
+  .sidebar-offcanvas {
+    right: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left
+  .sidebar-offcanvas {
+    left: -50%; /* 6 columns */
+  }
+
+  .row-offcanvas-right.active {
+    right: 50%; /* 6 columns */
+  }
+
+  .row-offcanvas-left.active {
+    left: 50%; /* 6 columns */
+  }
+
+  .sidebar-offcanvas {
+    position: absolute;
+    top: 0;
+    width: 50%; /* 6 columns */
+  }
 }
