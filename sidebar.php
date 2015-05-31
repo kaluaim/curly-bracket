@@ -1,7 +1,7 @@
-<div class="col-sm-3 sidebar">
-  <div class="collapse navbar-collapse" id="sidemenu">
-    <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
-  	<label>
+<div class="col-sm-3 hidden-sm hidden-xs" id="sidebar">
+
+  <form role="search" method="get" class="search-form" action="<?php echo home_url( '/' ); ?>">
+  	<label class="search-label">
   		<input type="lookup" class="search-field" placeholder="Search …" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search …'" value="" name="s" />
   	</label>
   	<button  type="submit" class="search-submit">
@@ -21,9 +21,4 @@
       <a href="http://projects.kalua.im/curlyBracket/">curlyBracket</a>
       on <a href="https://wordpress.org/"><i class="fa fa-wordpress"></i></a></p>
     </footer>
-  </div>
-
-
-
-
 </div>

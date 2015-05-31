@@ -3,9 +3,9 @@
 function theme_styles() {
 
   wp_enqueue_style('bootstrap_css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css');
-  // wp_enqueue_style('materialize_css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css');
   wp_enqueue_style('font_awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
-  wp_enqueue_style('main_css', get_template_directory_uri() . '/style.css');
+  wp_enqueue_style('style_css', get_template_directory_uri() . '/style.css');
+
 
 }
 add_action('wp_enqueue_scripts', 'theme_styles');
@@ -50,6 +50,7 @@ function create_widget( $name, $id, $description ) {
 }
 
 create_widget( 'Sidebar', 'Sidebar', 'Displays on the side of pages and posts with a sidebar' );
+create_widget( 'Sidebar-Mobile', 'Sidebar-Mobile', 'Displays as off canvas in mobile view instead of the Sidebar' );
 
 
 ?>

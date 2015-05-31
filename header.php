@@ -16,7 +16,7 @@
   </head>
 
   <body <?php body_class(); ?>>
-
+    <main class="cd-main-content">
     <div class="header">
       <div class="container">
           <div class="col-lg-8">
@@ -26,13 +26,7 @@
               <p class="header-tagline"><?php bloginfo('description'); ?></p>
             </a>
           </div>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#sidemenu">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
+          <a href="#0" class="cd-btn hidden-lg hidden-md"><span class="glyphicon glyphicon-option-vertical" aria-hidden="true"></span></a>
       </div>
 
     </div>
