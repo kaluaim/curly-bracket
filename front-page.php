@@ -36,8 +36,8 @@
 
 <nav>
   <ul class="pager">
-    <li class="next"><?php previous_posts_link( 'Newer' ); ?></li>
-    <li class="previous"><?php next_posts_link( 'Older' ); ?></li>
+    <li class="next"><?php previous_posts_link( '<span class="glyphicon glyphicon-menu-left"></span> Newer' ); ?></li>
+    <li class="previous"><?php next_posts_link( 'Older <span class="glyphicon glyphicon-menu-right"></span>' ); ?></li>
   </ul>
 </nav>
 
