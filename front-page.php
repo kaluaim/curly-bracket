@@ -7,9 +7,15 @@
 
       <div class="col-md-9 col-sm-12 posts">
 
-        <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+        <?php if ( have_posts() ) : ?>
 
-          <article class="post">
+<!-- Add the pagination functions here. -->
+
+<!-- Start of the main loop. -->
+<?php while ( have_posts() ) : the_post();  ?>
+
+<!-- the rest of your theme's main loop -->
+<article class="post">
             <p class="date"><?php echo the_time('l, F jS, Y'); ?></p>
             <p class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
             <p class="description">
@@ -22,18 +28,22 @@
 
             <hr/>
           </article>
+<?php endwhile; ?>
+<!-- End of the main loop -->
 
-          <!-- <?php the_content(); ?> -->
+<!-- Add the pagination functions here. -->
 
-        <?php endwhile; else: ?>
 
-          <article>
-            <h2>Oh no!</h2>
-          </article>
+<nav>
+  <ul class="pager">
+    <li class="next"><?php previous_posts_link( 'Newer' ); ?></li>
+    <li class="previous"><?php next_posts_link( 'Older' ); ?></li>
+  </ul>
+</nav>
 
-          <p>No content is appearing for this page!</p>
-
-        <?php endif; ?>
+<?php else : ?>
+<p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
 
       </div>
 

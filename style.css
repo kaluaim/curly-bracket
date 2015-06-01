@@ -161,6 +161,16 @@ a:focus {
 .post > .description > a {color: #bbb;}
 .post > .description > a:hover {color: #777;}
 
+
+/* pageination */
+.pager .previous>a, .pager .previous>span {
+  float: right;
+}
+
+.pager .next>a, .pager .next>span {
+  float: left;
+}
+
 .sidebar {
   font-family: 'Montserrat', Arial, serif;
 }
@@ -744,7 +754,7 @@ html, body {
   height: 40px;
   width: 40px;
   position: fixed;
-  bottom: 40px;
+  bottom: 100px;
   right: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   /* image replacement properties */
